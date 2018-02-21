@@ -27,3 +27,6 @@ sb::InputSimulation::keyTap( 'i' );
 
 ### Contributing
 All the values aren't mapped. A pull request helping with more values, or with PC/linux compatibility would be welcome.
+
+OSX keymap:
+[https://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes](https://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes)

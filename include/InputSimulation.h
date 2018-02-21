@@ -60,9 +60,7 @@ namespace sb {
             if(options.bCtrlDown){ CGEventSetFlags(keyDown, kCGEventFlagMaskControl); }
             if(options.bAltDown){ CGEventSetFlags(keyDown, kCGEventFlagMaskAlternate); }
             
-            
             CGEventPost(kCGAnnotatedSessionEventTap, keyDown);
-            
             CFRelease(keyDown);
             CFRelease(source);
         }
@@ -89,6 +87,7 @@ namespace sb {
             keyDown(keyCode, options);
             keyUp(keyCode, options);
         }
+        
       private:
         InputSimulation(){};
        
@@ -121,12 +120,39 @@ namespace sb {
                 case ci::app::KeyEvent::KEY_x: return kVK_ANSI_X;
                 case ci::app::KeyEvent::KEY_y: return kVK_ANSI_Y;
                 case ci::app::KeyEvent::KEY_z: return kVK_ANSI_Z;
-
-                case ci::app::KeyEvent::KEY_LEFT:       return kVK_LeftArrow;
-                case ci::app::KeyEvent::KEY_RIGHT:      return kVK_RightArrow;
-                case ci::app::KeyEvent::KEY_DOWN:       return kVK_DownArrow;
-                case ci::app::KeyEvent::KEY_UP:         return kVK_UpArrow;
-                case ci::app::KeyEvent::KEY_SPACE:      return kVK_Space;
+                    
+                case app::KeyEvent::KEY_0: return kVK_ANSI_0;
+                case app::KeyEvent::KEY_1: return kVK_ANSI_1;
+                case app::KeyEvent::KEY_2: return kVK_ANSI_2;
+                case app::KeyEvent::KEY_3: return kVK_ANSI_3;
+                case app::KeyEvent::KEY_4: return kVK_ANSI_4;
+                case app::KeyEvent::KEY_5: return kVK_ANSI_5;
+                case app::KeyEvent::KEY_6: return kVK_ANSI_6;
+                case app::KeyEvent::KEY_7: return kVK_ANSI_7;
+                case app::KeyEvent::KEY_8: return kVK_ANSI_8;
+                case app::KeyEvent::KEY_9: return kVK_ANSI_9;
+                    
+                case app::KeyEvent::KEY_LEFT:       return kVK_LeftArrow;
+                case app::KeyEvent::KEY_RIGHT:      return kVK_RightArrow;
+                case app::KeyEvent::KEY_DOWN:       return kVK_DownArrow;
+                case app::KeyEvent::KEY_UP:         return kVK_UpArrow;
+                
+                case app::KeyEvent::KEY_BACKSPACE:  return kVK_Delete;
+                case app::KeyEvent::KEY_TAB:        return kVK_Tab;
+                case app::KeyEvent::KEY_CLEAR:      return kVK_ANSI_KeypadClear;
+                case app::KeyEvent::KEY_DELETE:     return kVK_Delete;
+                case app::KeyEvent::KEY_RETURN:     return kVK_Return;
+                case app::KeyEvent::KEY_PAUSE:      return -1;
+                case app::KeyEvent::KEY_ESCAPE:     return kVK_Escape;
+                case app::KeyEvent::KEY_SPACE:      return kVK_Space;
+                case app::KeyEvent::KEY_EQUALS:     return kVK_ANSI_Equal;
+                case app::KeyEvent::KEY_PLUS:       return kVK_ANSI_KeypadPlus;
+                case app::KeyEvent::KEY_COMMA:      return kVK_ANSI_Comma;
+                case app::KeyEvent::KEY_MINUS:      return kVK_ANSI_Minus;
+                case app::KeyEvent::KEY_PERIOD:     return kVK_ANSI_Period;
+                case app::KeyEvent::KEY_SLASH:      return kVK_ANSI_Slash;
+                case app::KeyEvent::KEY_BACKSLASH:  return kVK_ANSI_Backslash;
+                    
                 default: break;
             }
             return -1;
